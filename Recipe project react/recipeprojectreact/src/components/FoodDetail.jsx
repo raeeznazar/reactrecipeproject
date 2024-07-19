@@ -17,10 +17,32 @@ function FoodDetail({ foodId }) {
     }, [foodId])
     return (
         <>
-            <div>FoodDetail {foodId}
-                {food.title}
+
+            <div>
+                <h1>{food.title}</h1>
                 <img src={food.image} alt="" />
             </div>
+
+            <span>
+                <strong>⏱️{food.readyInMinutes} Minutes</strong>
+            </span>
+            <span>
+                <strong>🧑‍🤝‍🧑Serves {food.servings}</strong>
+            </span>
+            <span>{food.vegan ? "🐄 Vegan" : ''}</span>
+            <span>
+                {food.vegetarian ? ' 🥕 vegetarian' : '🥩 Non-vegetarian'}
+            </span>
+
+            <div>
+                $ <span>{food.pricePerServing / 100} per serving</span>
+            </div>
+
+            <div>
+                <h2>Instructions</h2>
+                {food.analyzedInstructions[0.]}
+            </div>
+
         </>
     )
 }
